@@ -116,10 +116,10 @@ do
  mv temp2.txt grades1.txt
 done
 
-#Creating an array credits2 with respective credits in the order of subjects
+#Creating an array credits1 with respective credits in the order of subjects
 credits1=(4 4 3 3 3 3 1 1 1)
 
-#Reading each entry from grades.txt  and calculating sgpa for s2
+#Reading each entry from grades.txt  and calculating sgpa for s1
 while read -r line
   do
   sum=0
@@ -155,5 +155,17 @@ paste <(cut -c 1-10 < temp1.txt) s1sgpa.txt > t3.txt
 
 join  t2.txt  t3.txt > SGPA1.txt
 
-rm temp1.txt t2.txt t3.txt s1sgpa.txt
+rm temp1.txt t2.txt t3.txt s1sgpa.txt grades1.txt
 
+#cgpa calculation from the two sgpa files
+
+join SGPA1.txt SGPA2.txt > SGPA.txt
+while read -r line
+do
+ bc -l <<< "((($( echo $line | cut -d' ' -f2) * 23) + ($( echo $line | cut -d' ' -f3) * 24)) /47)" >> CGPA.txt
+done<SGPA.txt 
+
+paste <(cut  -d' ' -f1 SGPA.txt) CGPA.txt  > tempc.txt
+mv tempc.txt CGPA.txt
+
+#(bc <<< "scale = 2; ($sgpa / 23)" >> s1sgpa.txt)
