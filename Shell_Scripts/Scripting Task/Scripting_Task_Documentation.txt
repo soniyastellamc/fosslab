@@ -1,0 +1,29 @@
+Scripting Task 1
+
+Problem Statement:
+
+Download s1 and s2 results from ktu website. 
+Extract results of c4b from it.
+Calculate s1 and s2 sgpa, using that calculate cgpa
+
+Procedure followed:
+
+1.Downloaded s1 and s2 result PDF files from the ktu website
+
+2.Converted the PDF files to textfiles using pdftotext command.
+
+3.Extracted CS Results from the text file into a temp file.
+
+4.Removed spaces, tabs, newlines, nulls and special characters. Now the contents are in a single long stream. 
+
+5.Separated each RegNo and their respective marks into separate lines using sed  command.
+
+6.Cut out grades alone from temp file into a new file grades.txt created an array containing the grade points of subjects in the given order.
+
+7.Read each entry in grades.txt and calculate sgpa and store in SGPA1.txt
+
+8.Repeated steps 2-7 for s2 results.
+
+9.Joined files sgpa1 and sgpa2 into a single file, calculate cgpa and store in CGPA.txt
+ 
+
