@@ -9,6 +9,7 @@
 	#MySQL Installation
    	sudo apt-get install mysql-server
    	mysql_secure_installation
+	#Setting up MySQL
    	mysql -u root -p
 
 	#PHP Installation
@@ -20,7 +21,7 @@
 	#creates a blank php file and displays phpinfo
 	sudo nano /var/www/html/info.php	
 
-	#To visit the address	
+	#To visit the php page	
 	http://your_server_IP_address/info.php
 
 	
