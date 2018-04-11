@@ -1,5 +1,5 @@
 #!/bin/bash
-clear
+
 if [[ "$1" = "" || "$2" = "" ]]
 then
 	echo "Too few arguments"

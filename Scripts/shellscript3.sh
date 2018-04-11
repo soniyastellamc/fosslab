@@ -19,3 +19,5 @@ rm temp.txt
 echo "First field of the txt file"
 awk '{print $1}' f1.txt
 
+rm f1.txt
+
